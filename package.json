@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^9.4.0"
+    "commander": "^9.4.0",
+    "nanoid": "^4.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
