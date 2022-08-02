@@ -21,7 +21,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case "list":
       const products = await listContacts();
-      console.log(products);
+      console.table(products);
       break;
     case "get":
       const productById = await getContactById(id);
@@ -35,13 +35,12 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       console.log(addProducts);
       break;
     case "remove":
-      const contactId = await getContactById(id);
-      if (!contactId) {
-        throw new Error(`Product with id=${id} not found `);
-      } else {
+      
         const removeById = await removeContact(id);
         console.log(removeById);
-      }
+        if (!removeById) {
+          throw new Error(`Product with id=${id} not found `);
+        }
       break;
 
     default:
